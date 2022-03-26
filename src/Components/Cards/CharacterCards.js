@@ -11,10 +11,10 @@ import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
 
 export const CharacterCards = ({ person }) => {
-  const { setIsModalVisible } = useContext(GlobalContext);
+  const { setIsModalVisible, setPersonFiltered } = useContext(GlobalContext);
 
-  const handleClick = (id) => {
-    console.log(person);
+  const handleClick = () => {
+    setPersonFiltered(person);
   };
 
   return (
@@ -25,11 +25,7 @@ export const CharacterCards = ({ person }) => {
       isVisible={true}
     >
       <ContainerCharacterInfo>
-        <Card
-          onClick={() => {
-            setIsModalVisible(true);
-          }}
-        >
+        <Card>
           <CardActionArea>
             <CardContent>
               <img src={person.image} alt="imagem do personagem" />
@@ -40,7 +36,7 @@ export const CharacterCards = ({ person }) => {
           </CardActionArea>
           <CardActions>
             <Button
-              onClick={() => handleClick(person.id)}
+              onClick={() => handleClick(person.id, setIsModalVisible(true))}
               variant="contained"
               color="secondary"
             >

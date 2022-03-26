@@ -1,6 +1,10 @@
 import React from "react";
-import { ContainerHeader, ContainerTitleLogo } from "./styleHeader";
-import { Animated } from "react-animated-css";
+import {
+  ContainerHeader,
+  ContainerTitleLogo,
+  ContainerLogo,
+  Containertitle,
+} from "./styleHeader";
 
 import logo from "../../assets/logo.png";
 
@@ -8,16 +12,12 @@ export const Header = ({ title }) => {
   return (
     <ContainerHeader>
       <ContainerTitleLogo>
-        <img src={logo} alt="logo da página" />
-        <Animated
-          animationIn="jello"
-          animationOut="fadeOut"
-          isVisible={true}
-          animationInDuration={1500}
-          animationOutDelay={1000}
-        >
+        <ContainerLogo>
+          <img src={logo} alt="logo da página" />
+        </ContainerLogo>
+        <Containertitle>
           <h1>{title}</h1>
-        </Animated>
+        </Containertitle>
       </ContainerTitleLogo>
     </ContainerHeader>
   );

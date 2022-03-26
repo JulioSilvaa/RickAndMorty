@@ -14,7 +14,7 @@ export const Home = () => {
     character &&
     character.map((person) => {
       return (
-        <CharacterCards key={person.id} person={person} personID={person.id} />
+        <CharacterCards key={person.id} person={person} personID={person} />
       );
     });
 

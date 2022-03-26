@@ -1,7 +1,7 @@
 import React from "react";
 import { ContainerHeader, ContainerTitleLogo } from "./styleHeader";
-import {Animated} from "react-animated-css";
- 
+import { Animated } from "react-animated-css";
+
 import logo from "../../assets/logo.png";
 
 export const Header = ({ title }) => {

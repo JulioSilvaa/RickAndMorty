@@ -7,6 +7,9 @@ export const GlobalState = (props) => {
   const [character, setCharacter] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isLoading, setLoading] = useState(false);
+  const [personFiltered, setPersonFiltered] = useState()
+
+  console.log(personFiltered, "global");
 
   useEffect(() => {
     getCharacters();
@@ -29,7 +32,9 @@ export const GlobalState = (props) => {
     character,
     isModalVisible,
     setIsModalVisible,
-    isLoading
+    isLoading,
+    setPersonFiltered,
+    personFiltered
   };
 
   return (

@@ -14,13 +14,10 @@ const GlobalStyle = createGlobalStyle`
 
 }
 
-img{
-    max-width:100% ;
-}
 
 .ContainerApp{
 display:grid ;
-grid-template-columns: 4fr 1fr ;
+grid-template-columns: 4fr 1fr;
 grid-template-rows: 8vh 92vh  ;
 grid-template-areas:" h h"
 "m a"
@@ -29,7 +26,7 @@ grid-template-areas:" h h"
 
  
  background-color:
-#f0efed ;
+ #EAEFD3;
 }
 
 

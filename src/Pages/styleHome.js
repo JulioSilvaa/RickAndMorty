@@ -8,7 +8,9 @@ export const ContainerHome = styled.div`
   margin: 8px auto;
   gap: 10px;
   justify-content: center;
-
-
 `;
 
+export const Loading = styled.div`
+  font-size: 3rem;
+  margin: 200px auto;
+`;

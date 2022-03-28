@@ -36,7 +36,9 @@ export const CharacterFiltered = ({ personFiltered }) => {
           </CardActionArea>
           <CardActions>
             <Button
-              onClick={() => handleClick(personFiltered.id, setIsModalVisible(true))}
+              onClick={() =>
+                handleClick(personFiltered.id, setIsModalVisible(true))
+              }
               variant="contained"
               color="secondary"
             >

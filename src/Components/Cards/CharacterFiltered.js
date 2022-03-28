@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { GlobalContext } from "../../Global//GlobalContext";
+import { GlobalContext } from "../../Global/GlobalContext";
 import { ContainerCharacterInfo } from "./ContainerCharacterInfo";
 import { Animated } from "react-animated-css";
 
@@ -10,11 +10,11 @@ import Typography from "@material-ui/core/Typography";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
 
-export const CharacterCards = ({ person }) => {
+export const CharacterFiltered = ({ personFiltered }) => {
   const { setIsModalVisible, setPersonFiltered } = useContext(GlobalContext);
 
   const handleClick = () => {
-    setPersonFiltered(person);
+    setPersonFiltered(personFiltered);
   };
 
   return (
@@ -28,15 +28,15 @@ export const CharacterCards = ({ person }) => {
         <Card>
           <CardActionArea>
             <CardContent>
-              <img src={person.image} alt="imagem do personagem" />
+              <img src={personFiltered.image} alt="imagem do personagem" />
               <Typography gutterBottom variant="h6" component="h2">
-                {person.name}
+                {personFiltered.name}
               </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
             <Button
-              onClick={() => handleClick(person.id, setIsModalVisible(true))}
+              onClick={() => handleClick(personFiltered.id, setIsModalVisible(true))}
               variant="contained"
               color="secondary"
             >

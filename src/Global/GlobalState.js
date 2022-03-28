@@ -7,20 +7,21 @@ export const GlobalState = (props) => {
   const [character, setCharacter] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isLoading, setLoading] = useState(false);
-  const [personFiltered, setPersonFiltered] = useState()
-
-  console.log(personFiltered, "global");
+  const [personFiltered, setPersonFiltered] = useState();
+  const [currentPage, setCurrentPage] = useState(0);
+  const [inputValue, setInputValue] = useState("");
+  const [characterFiltered, setCharacterFiltered] = useState();
 
   useEffect(() => {
     getCharacters();
-  }, []);
+  }, [currentPage]);
 
   const getCharacters = () => {
     setLoading(true);
     axios
-      .get(BaseUrl)
+      .get(`${BaseUrl}/?page=${currentPage}`)
       .then((res) => {
-        setCharacter(res.data.results);
+        setCharacter([...character, ...res.data.results]);
         setLoading(false);
       })
       .catch((err) => {
@@ -28,13 +29,28 @@ export const GlobalState = (props) => {
       });
   };
 
+  useEffect(() => {
+    const intersectionobserver = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        setCurrentPage((currentPageInsideState) => currentPageInsideState + 1);
+      }
+    });
+    intersectionobserver.observe(document.querySelector("#sentinela"));
+    return () => intersectionobserver.disconnect();
+  }, []);
+
   const data = {
     character,
     isModalVisible,
     setIsModalVisible,
     isLoading,
     setPersonFiltered,
-    personFiltered
+    personFiltered,
+    setCurrentPage,
+    setInputValue,
+    inputValue,
+    characterFiltered,
+    setCharacterFiltered,
   };
 
   return (

@@ -7,5 +7,6 @@ export const ContainAside = styled.div`
   height: 100%;
   grid-area: a;
   margin: 8px;
+  position: sticky ;
 `;
  

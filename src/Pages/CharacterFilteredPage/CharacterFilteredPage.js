@@ -22,10 +22,23 @@ export const CharacterFilteredPage = () => {
   return (
     <>
       <Header title={"Personagens Filtrados"} />
+      <div style={{ margin: "20px auto" }}>
+        <button
+          style={{
+            width: "200px",
+            height: "50px",
+            borderRadius: "8px",
+            backgroundColor: "white",
+            cursor: "pointer",
+          }}
+          onClick={() => navigate("/")}
+        >
+          Voltar
+        </button>
+      </div>
       <Aside />
       <ContainerHome>
         {listOfCharacterFiltered}
-        <button onClick={() => navigate("/")}>Voltar</button>
         {!isLoading ? (
           isModalVisible ? (
             <Modal
@@ -38,7 +51,6 @@ export const CharacterFilteredPage = () => {
           <h4>Carregando ...</h4>
         )}
       </ContainerHome>
-      
     </>
   );
 };

@@ -5,3 +5,7 @@ export const goToFiltered = (navigate) => {
 export const goToHome = (navigate) => {
   navigate("/");
 };
+
+export const goToSeasonPage = (navigate) => {
+  navigate("episodios");
+};

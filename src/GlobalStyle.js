@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 
-.ContainerApp{
+.ContainerApp{   
 display:grid ;
 grid-template-columns: 4fr 1fr;
 grid-template-rows: 8vh 92vh  ;
@@ -26,7 +26,7 @@ grid-template-areas:" h h"
 
  
  background-color:
- #EAEFD3;
+ lightgray;
 }
 
 

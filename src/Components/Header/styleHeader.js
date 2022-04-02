@@ -4,7 +4,7 @@ export const ContainerHeader = styled.div`
   grid-area: h;
   display: flex;
   align-items: center;
-  background-color: #b3c0a4;
+  background-color: lightgray;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 `;
 
